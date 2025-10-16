@@ -1,8 +1,13 @@
-import os
-import pandas as pd
+import matplotlib
+import pandas
+import numpy
 
-def limpar_terminal():
-    os.system("cls" if os.name == "nt" else "clear")
+print(matplotlib.__version__)
+print(pandas.__version__)
+print(numpy.__version__)
+
+
+
 
 def validar(a, b):
     while True:
@@ -42,3 +47,4 @@ print("Bem-vindo ao DataVision !")
 print("=" * 25)
 
 menu_principal()
+
