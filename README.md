@@ -2,27 +2,29 @@
 
 Aplicativo em Python para análise exploratória de dados em arquivos CSV.
 
-O **DataVision** permite que o usuário carregue datasets e visualize informações estatísticas e gráficos básicos de forma prática.
+O **DataVision** permite que o usuário carregue datasets e visualize informações estatísticas e gráficos básicos de forma prática e intuitiva.
 
 ---
 
-## 🚧 Status do Projeto
-**Em desenvolvimento**  
-Funcionalidades principais estruturadas; melhorias e novas implementações estão em andamento.
+## Status do Projeto 🚧 
+Projeto concluído e funcional ✅
 
 ---
 
-## 🎯 Objetivo
-- Leitura de arquivos CSV com **pandas**
-- Visualização das primeiras linhas do dataset
-- Estatísticas descritivas básicas
-- Gráficos de linha, barra e histograma com **matplotlib**
+## Objetivo 🎯
+- Carregar arquivos CSV com **pandas**
+- Visualizar as primeiras linhas do dataset
+- Obter estatísticas descritivas básicas
+- Gerar gráficos de linha, barra e histograma com **matplotlib** (colunas numéricas)
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+## Tecnologias Utilizadas 🧠
 - Python
 - Pandas
 - Matplotlib
 
 ---
+
+## Repositório 📂
+[DataVision no GitHub](https://github.com/rian-souza/DataVision)
