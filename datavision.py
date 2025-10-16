@@ -1,13 +1,9 @@
-import matplotlib
-import pandas
-import numpy
+import os
+import pandas as pd
+import matplotlib.pyplot as plt
 
-print(matplotlib.__version__)
-print(pandas.__version__)
-print(numpy.__version__)
-
-
-
+def limpar_terminal():
+    os.system("cls" if os.name == "nt" else "clear")
 
 def validar(a, b):
     while True:
@@ -32,12 +28,37 @@ def menu_ler_arquivo():
         except Exception as e:
             print(f"Erro ao ler o arquivo {nome_arquivo}: {e}")
 
+def menu_estatistica(dataframe):
+    while True:
+        print("1 - Gráfico de linhas\n2 - Gráfico de barras\n3 - Histograma\n4 - Informações diversas\n0 - Voltar")
+        temp = validar(0, 4)
+        if temp == 1:
+            dataframe.plot()
+            plt.show()
+        elif temp == 2:
+            dataframe.plot(kind="bar")
+            plt.show()
+        elif temp == 3:
+            dataframe.hist(figsize=(10, 8))
+            plt.show()
+        elif temp == 4:
+            print(dataframe.info())
+            print(dataframe.describe())
+        elif temp == 0:
+            break
+
 def menu_principal():
+    dataframe = None
     while True:
         print("1 - Ler arquivo CSV.\n2 - Arquivos lidos\n0 - Sair.")
         temp = validar(0, 2)
         if temp == 1:
-            menu_ler_arquivo()
+            dataframe = menu_ler_arquivo()
+        elif temp == 2:
+            if dataframe is not None:
+                menu_estatistica(dataframe)
+            else:
+                print("Nenhum arquivo carregado ainda.")
         elif temp == 0:
             break
 
@@ -47,4 +68,3 @@ print("Bem-vindo ao DataVision !")
 print("=" * 25)
 
 menu_principal()
-
