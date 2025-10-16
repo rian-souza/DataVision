@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 
 def limpar_terminal():
     os.system("cls" if os.name == "nt" else "clear")
@@ -14,12 +15,24 @@ def validar(a, b):
         except ValueError:
             print("Digite somente números.")
 
+def menu_ler_arquivo():
+    while True:
+        try:
+            nome_arquivo = input("Digite o nome do arquivo CSV: ")
+            dataframe_arquivo = pd.read_csv(nome_arquivo)
+            print(dataframe_arquivo.head())
+            return dataframe_arquivo
+        except FileNotFoundError:
+            print(f"Arquivo {nome_arquivo} não encontrado.")
+        except Exception as e:
+            print(f"Erro ao ler o arquivo {nome_arquivo}: {e}")
+
 def menu_principal():
     while True:
         print("1 - Ler arquivo CSV.\n2 - Arquivos lidos\n0 - Sair.")
         temp = validar(0, 2)
         if temp == 1:
-            pass
+            menu_ler_arquivo()
         elif temp == 0:
             break
 
